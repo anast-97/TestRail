@@ -8,12 +8,16 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import pages.LoginPage;
+import pages.SampleProjectPage;
+import pages.TestCasesPage;
 
 import java.time.Duration;
 
 public abstract class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
+    protected SampleProjectPage sampleProjectPage;
+    protected TestCasesPage testCasesPage;
 
     @BeforeMethod(alwaysRun = true)
     @Parameters({"browserName", "message"})
@@ -28,6 +32,8 @@ public abstract class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         this.loginPage = new LoginPage(driver);
+        this.sampleProjectPage = new SampleProjectPage(driver);
+        this.testCasesPage = new TestCasesPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
