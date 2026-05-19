@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class LoginPageTests extends BaseTest {
 
-    @Test
+    @Test(groups = "Smoke")
     public void loginTest() {
         loginPage.open();
         loginPage.sendEmail("y.nastua97.testrail.io");

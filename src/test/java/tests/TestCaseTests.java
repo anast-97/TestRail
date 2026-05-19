@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class TestCaseTests extends BaseTest{
 
-    @Test
+    @Test(groups = "Regression")
     public void createNewTestCase(){
         sampleProjectPage.open();
         sampleProjectPage.choseTestCases();
